@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://b4hrte5rc4ts8"]
+
+[ext_resource type="Script" uid="uid://do7ujx6od5gos" path="res://scenes/menu/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://b2cli6kd5cnov" path="res://assets/background/Brown.png" id="2_wu84c"]
+[ext_resource type="Texture2D" uid="uid://br0f4y38rehsk" path="res://assets/menu/cooltextGameName.png" id="3_8ln24"]
+[ext_resource type="AudioStream" uid="uid://dblltctb8mk12" path="res://assets/music/mii-channel-music.mp3" id="4_kiqgm"]
+
+[node name="MainMenu" type="Node" unique_id=339793772]
+script = ExtResource("1_bqqt6")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1373305093]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wu84c")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2126825492]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -314.0
+offset_top = -46.5
+offset_right = 314.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8ln24")
+
+[node name="Button (Level1)" type="Button" parent="." unique_id=1941767715]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = 90.0
+offset_right = -54.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 1"
+
+[node name="Button2 (Level2)" type="Button" parent="." unique_id=1617992973]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = 90.0
+offset_right = 196.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 2"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=638560621]
+stream = ExtResource("4_kiqgm")
+autoplay = true
+
+[node name="Button3 (Quite)" type="Button" parent="." unique_id=194145669]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.0
+offset_top = -170.0
+offset_right = 71.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+
+[connection signal="pressed" from="Button (Level1)" to="." method="_on_button_level_1_pressed"]
+[connection signal="pressed" from="Button2 (Level2)" to="." method="_on_button_2_level_2_pressed"]
+[connection signal="pressed" from="Button3 (Quite)" to="." method="_on_button_3_quite_pressed"]

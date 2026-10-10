@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://dnf3xheijv0c5"]
+
+[ext_resource type="Script" uid="uid://co1ub571c7sv5" path="res://scenes/game_objects/rigid_body_2d_(mush_enemy).gd" id="1_qy5di"]
+[ext_resource type="Texture2D" uid="uid://bvr4mkmuwjlk2" path="res://assets/game_elements/Mushroom/Idle (32x32).png" id="1_rjp2s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no78e"]
+atlas = ExtResource("1_rjp2s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljtdq"]
+atlas = ExtResource("1_rjp2s")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wop3v"]
+atlas = ExtResource("1_rjp2s")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc31b"]
+atlas = ExtResource("1_rjp2s")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekgsa"]
+atlas = ExtResource("1_rjp2s")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy6px"]
+atlas = ExtResource("1_rjp2s")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7exsb"]
+atlas = ExtResource("1_rjp2s")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhido"]
+atlas = ExtResource("1_rjp2s")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbvge"]
+atlas = ExtResource("1_rjp2s")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7jir"]
+atlas = ExtResource("1_rjp2s")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csrxp"]
+atlas = ExtResource("1_rjp2s")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a650x"]
+atlas = ExtResource("1_rjp2s")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alyjv"]
+atlas = ExtResource("1_rjp2s")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hk0fu"]
+atlas = ExtResource("1_rjp2s")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h7tns"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no78e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljtdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wop3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc31b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekgsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy6px")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7exsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhido")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbvge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7jir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csrxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a650x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alyjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hk0fu")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7tns"]
+size = Vector2(42, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iby7r"]
+size = Vector2(44, 32)
+
+[node name="RigidBody2D (mushEnemy)" type="RigidBody2D" unique_id=964482717]
+can_sleep = false
+script = ExtResource("1_qy5di")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=246668353]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_h7tns")
+autoplay = "default"
+frame = 11
+frame_progress = 0.3546113
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2094350571]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_h7tns")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=93953257]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1184614785]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_iby7r")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bubgmlxgfjjsx"]
+
+[ext_resource type="Texture2D" uid="uid://coabcibjfy0jr" path="res://Off.png" id="1_mbmhi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7tns"]
+size = Vector2(41.55536, 46.610836)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=649926179]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1004426710]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_mbmhi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1916701805]
+position = Vector2(0, -4.7683716e-07)
+rotation = -3.1415925
+scale = Vector2(1.540114, -0.42908475)
+shape = SubResource("RectangleShape2D_h7tns")
+one_way_collision = true
